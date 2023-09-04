@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Philippines</h1>
+      <h2>Thursday, August 3, 2023 | 10:24 AM</h2>
+
+      <br />
+
+      <form id="counDetails">
+        <div class="row">
+          <div class="col-9">
+            <input
+              type="text"
+              placeholder="Enter your city"
+              class="form-control city"
+              id="search-text-input"
+            />
+          </div>
+          <div class="col-3">
+            <input
+              type="submit"
+              value="Search"
+              class="btn btn-primary w-100 button"
+            />
+          </div>
+        </div>
+      </form>
+
+      <div class="row">
+        <div class="col-4">
+          <ul>
+            <li class="temp" id="temperature">20<span>°C</span></li>
+          </ul>
+        </div>
+        <div class="col-4">🌞</div>
+        <div class="col-4">
+          <ul>
+            <li class="humid">Humidity:<span id="humidity"> 78%</span></li>
+            <li class="wind">Wind:<span id="wind"> 20km/h</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <p>This week</p>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-2">
+              <ul>
+                <li class="day">Today</li>
+                <li>🌞</li>
+                <li>20°C</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul>
+                <li class="day">Fri</li>
+                <li>🌞</li>
+                <li>20°C</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul>
+                <li class="day">Sat</li>
+                <li>⛅</li>
+                <li>19°c</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul>
+                <li class="day">Sun</li>
+                <li>🌧️</li>
+                <li>17°c</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul>
+                <li class="day">Mon</li>
+                <li>🌞</li>
+                <li>24°c</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul>
+                <li class="day">Tue</li>
+                <li>🌞</li>
+                <li>20°c</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <p class="coder">
+        <a
+          href="https://github.com/nik0121/Landing-page-project"
+          target="_blank"
+          >Open-source code</a
+        >
+        Coded by Nica Guevarra
+      </p>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
