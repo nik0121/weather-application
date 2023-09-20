@@ -3,6 +3,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
   )}<span>°C</span>`;
+
   document.querySelector("#humidity").textContent = ` ${Math.round(
     response.data.main.humidity
   )}%`;
@@ -23,6 +24,8 @@ function search(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
+
+displayForecast();
 
 let form = document.querySelector("#counDetails");
 form.addEventListener("submit", search);
@@ -71,3 +74,42 @@ let months = [
 let month = months[now.getMonth()];
 
 h2.innerHTML = `${day}, ${month} ${date}, ${year} | ${hours}:${minutes}`;
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+
+    <div class="col-2">
+      <ul>
+        <li class="day">
+          <span id="weather-forecast-date">${day}</span>
+        </li>
+
+        <img
+          src="https://openweathermap.org/img/wn/10d@2x.png"
+          alt=""
+          width="42"
+        />
+
+        <li>
+          <span id="weather-forecast-temperature">20°C</span>
+        </li>
+      </ul>
+    </div>
+  
+
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+
+  console.log(forecastHTML);
+}
