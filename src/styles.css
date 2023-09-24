@@ -9,6 +9,7 @@
   border: 1px solid #000;
   padding: 25px;
   border-radius: 5px;
+  margin-bottom: 0;
 }
 
 h1 {
@@ -26,6 +27,16 @@ h1 {
 .temperature-details ul {
   padding: 0;
 } 
+.temperature-details h2 {
+  font-size: 56px;
+}
+.temperature-details ul li.description {
+  font-style: italic;
+  font-weight: 500;
+}
+.temperature-details ul li span {
+  font-weight: 500;
+}
 .weather-forecast {
   text-align: center;
 }
@@ -36,4 +47,10 @@ h1 {
 
 .weather-forecast-temperature-min {
   opacity: 0.6;
+}
+
+.coder {
+  text-align: center;
+  margin-top: 5px;
+  font-style: italic;
 }

@@ -22,6 +22,7 @@
 
   <body>
     <div class="container">
+      <div class="weather">
       <h1 id="city"></h1>
       <p id="date"></p>
       <form id="search-form">
@@ -32,6 +33,7 @@
             placeholder="Enter your city"
             class="form-control city"
             id="search-text-input"
+            autocomplete="off"
           />
           </div>
           <div class="col-3 d-grid d-block">
@@ -48,7 +50,7 @@
         </div>
         <div class="col-4">
           <ul>
-            <li id="description"></li>
+            <li class="description" id="description"></li>
             <li>Humidity: <span id="humidity"></span></li>
             <li>Wind: <span id="wind"></span></li>
           </ul>
@@ -67,12 +69,13 @@
           </div>
         </div>
       </div>
+      </div>
     </div>
     <p class="coder">
       <a href="https://github.com/nik0121/weather-application" target="_blank"
         >Open-source code</a
       >
-      Coded by Nica Guevarra
+      by Nica Guevarra
     </p>
     <script src="src/index.js"></script>
   </body>

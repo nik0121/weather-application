@@ -41,26 +41,55 @@ function formattedDate(timestamp) {
   return `${day}, ${month} ${currentDate}, ${year} |  ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp*1000);
+  let day = date.getDay();
+  let days = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+  ];
+
+  return days[day];
+}
+
+
+function displayForecast(response) {
+  let weatherforecast = response.data.daily;
+
   let forecast = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri"];
+ 
 
-  days.forEach(function(day){
-    
+  weatherforecast.forEach(function (weatherForecastDay, index) {
+    if (index < 6) {
+
     forecastHTML =
       forecastHTML +
       `<div class="col-2">
-    <div class="weather-forecast-date">${day}</div> 
-    <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="36" />
+    <div class="weather-forecast-date">${formatDay(weatherForecastDay.dt)}</div> 
+    <img src="http://openweathermap.org/img/wn/${weatherForecastDay.weather[0].icon}@2x.png" alt="" width="36" />
     <div class="weather-forecast-temperature">
-    <span class="weather-forecast-temperature-max">18°</span>
-    <span class="weather-forecast-temperature-min">12°</span>
+    <span class="weather-forecast-temperature-max">${Math.round(weatherForecastDay.temp.max)}°</span>
+    <span class="weather-forecast-temperature-min">${Math.round(weatherForecastDay.temp.min)}°</span>
     </div>
     </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "4c9b53e4f8f5eb00df5915bdca340605";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -73,7 +102,7 @@ function displayTemperature(response) {
   let date = document.querySelector("#date");
   let icon = document.querySelector("#icon");
 
-  temperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  temperature.innerHTML = `${Math.round(response.data.main.temp)}°c`;
   city.innerHTML = `${response.data.name}`;
   description.innerHTML = `${response.data.weather[0].description}`;
   humidity.innerHTML = `${Math.round(response.data.main.humidity)}%`;
@@ -83,6 +112,9 @@ function displayTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
+
 }
 
 function search(city) {
@@ -100,7 +132,6 @@ function handleSubmit(event) {
 }
 
 search("Philippines");
-displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
