@@ -1,83 +1,28 @@
-.container {
-  max-width: 500px;
-  display: block;
-  margin: 0 auto;
-  padding: 30px;
-  background: linear-gradient(-225deg, #5d9fff 0%, #b8dcff 48%, #6bbbff 100%);
-  border-radius: 10px;
-  font-family: arial, sans-serif;
-}
-h1 {
-  font-size: 60px;
-  margin-bottom: 30px;
-  font-family: arial, sans-serif;
-  font-weight: bold;
-}
-h2 {
-  font-size: 15px;
-  margin-top: 20px;
-}
-form {
-  margin-bottom: 20px;
-}
-
-li {
-  list-style: none;
-  margin-top: -0px;
-}
-ul {
-  padding: 0;
-}
-.temp {
-  font-size: 70px;
-  margin-right: 50px;
-}
-.time {
-  font-size: 15px;
-}
-.humid {
-  font-size: 12px;
-  text-align: left;
-  padding: 0;
-  margin-top: 60px;
-}
-.wind {
-  font-size: 12px;
-  text-align: left;
+*{
   margin: 0;
+  padding: 0;
 }
 
-.col-4 {
-  font-size: 100px;
-  text-align: center;
-}
-.card {
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(89, 196, 233) 0%,
-    rgb(193, 181, 232) 90%
-  );
-}
-.coder {
-  text-align: center;
-  font-size: 12px;
-}
-.button {
-  font-size: 14px;
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(89, 196, 233) 0%,
-    rgb(193, 181, 232) 90%
-  );
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  border: 1px solid #000;
+  padding: 25px;
   border-radius: 5px;
-}
-.city {
-  border-radius: 5px;
-}
-.day {
-  font-weight: 700;
 }
 
-a {
-  text-decoration: none;
+h1 {
+  font-weight: 600;
 }
+
+.temperature-details {
+  text-align: center;
+  align-items: center;
+}
+.temperature-details li {
+  list-style: none;
+  text-align: left;
+}
+.temperature-details ul {
+  padding: 0;
+} 

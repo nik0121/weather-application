@@ -22,63 +22,44 @@
 
   <body>
     <div class="container">
-      <h1>Philippines</h1>
-      <h2>Thursday, August 3, 2023 | 10:24 AM</h2>
-
-      <br />
-
-      <form id="counDetails">
-        <div class="row">
-          <div class="col-9">
-            <input
-              type="text"
-              placeholder="Enter your city"
-              class="form-control city"
-              id="search-text-input"
-            />
-          </div>
-          <div class="col-3">
-            <input
-              type="submit"
-              value="Search"
-              class="btn btn-primary w-100 button"
-            />
-          </div>
-        </div>
-      </form>
-
+      <h1 id="city"></h1>
+      <p id="date"></p>
       <div class="row">
+        <div class="col-9">
+          <input
+            type="text"
+            placeholder="Enter your city"
+            class="form-control city"
+            id="search-text-input"
+          />
+        </div>
+        <div class="col-3 d-grid d-block">
+          <input type="submit" value="Search" class="btn btn-primary" />
+        </div>
+      </div>
+      <div class="row temperature-details mt-3">
         <div class="col-4">
-          <ul>
-            <li class="temp" id="temperature">20<span>°C</span></li>
-          </ul>
+          <h2 id="temperature"></h2>
         </div>
         <div class="col-4">
-          <img src="https://openweathermap.org/img/wn/10d@2x.png" id="icon" />
+          <img src="" id="icon" />
         </div>
-
         <div class="col-4">
           <ul>
-            <li class="humid">Humidity:<span id="humidity"> 78%</span></li>
-            <li class="wind">Wind:<span id="wind"> 20km/h</span></li>
+            <li id="description"></li>
+            <li>Humidity: <span id="humidity"></span></li>
+            <li>Wind: <span id="wind"></span></li>
           </ul>
         </div>
       </div>
       <hr />
-      <p>This week</p>
-      <div class="card">
-        <div class="card-body" id="forecast">
-          
-        </div>
-      </div>
-      <hr />
-      <p class="coder">
-        <a href="https://github.com/nik0121/weather-application" target="_blank"
-          >Open-source code</a
-        >
-        Coded by Nica Guevarra
-      </p>
     </div>
+    <p class="coder">
+      <a href="https://github.com/nik0121/weather-application" target="_blank"
+        >Open-source code</a
+      >
+      Coded by Nica Guevarra
+    </p>
     <script src="src/index.js"></script>
   </body>
 </html>
