@@ -26,3 +26,14 @@ h1 {
 .temperature-details ul {
   padding: 0;
 } 
+.weather-forecast {
+  text-align: center;
+}
+
+.weather-forecast-temperature-max {
+  font-weight: 400;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.6;
+}
